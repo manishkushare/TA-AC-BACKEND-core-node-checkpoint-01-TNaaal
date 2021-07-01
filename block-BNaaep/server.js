@@ -87,14 +87,19 @@ function handleServer(req,res){
             else{
                 let fileNames = fs.readdirSync(__dirname+"/contact");
                 console.log(fileNames);
-                fileNames.forEach(file => {
-                    fs.readFileSync(__dirname+"/contact"+`/${file}`,(err,content)=>{
-                        
+                let arrayLength = fileNames.length;
+                fileNames.forEach((file,id) => {
+                    fs.readFile(__dirname+"/contact"+`/${file}`,(err,content)=>{
+                        // console.log(content.toString());
                         let parsedData = JSON.parse(content.toString());
+                        // console.log(parsedData);
+                        if(id <= arrayLength)
                         Object.keys(parsedData).forEach(key => {
                             res.write(`<h2>${key} : ${parsedData[key]}</h2>`);
                         })
-                        res.end();
+                        else{
+                            res.end();
+                        }
                     })
                 })
             }
