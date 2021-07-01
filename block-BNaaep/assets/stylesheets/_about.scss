@@ -1,0 +1,30 @@
+.about{
+    .address{
+        display: flex;
+        p{
+            margin-left: 0.4rem;
+        }
+        padding: 0.5rem 0;
+    }
+    .btn-row{
+        i{
+            margin-left: 0.5rem;
+        }
+        padding-bottom: 0.5rem;
+    }
+}
+.about{
+    .personal-info{
+        border-bottom: 1px solid gray;
+    }
+}
+.about-me{
+    p{
+        padding: 1rem 0;
+    }
+    .regards{
+        display: flex;
+        flex-direction: column;
+    
+    }
+}
